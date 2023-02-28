@@ -1,4 +1,10 @@
-<table class="table table-striped">
+<div class="container fa-3x" *ngIf="!isLoaded">
+
+  <i class="fa-solid fa-cog fa-spin fa-spin-reverse center" ></i>
+
+</div>
+
+<table class="table table-striped" *ngIf="isLoaded">
     <thead>
       <tr>
         <th scope="col">Id</th>
@@ -15,7 +21,7 @@
         <td>{{item.flight_number}}</td>
         <td>{{item.name}}</td>
         <td>{{item.date_utc| date}}</td>
-        <td>Restar fecha contra fecha de hoy</td>
+        <td>(({{item.date_utc-date}})/1000*60*60*24)</td>
         <td><button type="button" class="btn btn-info" routerLink="{{item.id}}">Info</button>
         </td>
       </tr>

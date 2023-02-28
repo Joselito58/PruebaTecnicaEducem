@@ -9,6 +9,7 @@ import { LanzamientosComponent } from './pages/lanzamientos/lanzamientos.compone
 import { CohetesComponent } from './pages/cohetes/cohetes.component';
 import { LanzamientoComponent } from './pages/lanzamiento/lanzamiento.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SafePipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LanzamientosComponent,
     CohetesComponent,
-    LanzamientoComponent
+    LanzamientoComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

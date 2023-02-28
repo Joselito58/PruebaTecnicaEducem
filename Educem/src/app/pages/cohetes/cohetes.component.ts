@@ -8,11 +8,13 @@ import { CohetesService } from 'src/app/services/cohetes.service';
 })
 export class CohetesComponent implements OnInit {
   cohetesRender!:any
+  isLoaded!:boolean
+
   constructor(private cohetesS:CohetesService) { }
 
   async ngOnInit():Promise <void> {
     this.obtenerCohetes()
-
+    this.isLoaded=true
    
   }
 

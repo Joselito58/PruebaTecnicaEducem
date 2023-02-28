@@ -1,7 +1,41 @@
-<div class="container">
-<div class="row bg-secondary">
-<div class="col">
-    <p class="text-center">{{lanzamiento.name}}</p>
+<div class="container fa-3x" *ngIf="!isLoaded">
+
+    <i class="fa-solid fa-cog fa-spin fa-spin-reverse center" ></i>
+
 </div>
-</div>
+<div class="container"*ngIf="isLoaded">
+    <div class="container" >
+        <div class="row bg-secondary text-white" >
+                <div class="col">
+                    <p class="text-center ">{{lanzamiento.name}}</p>
+                    <p class="text-center">{{lanzamiento.id}}</p>
+                    <p class="text-center">{{lanzamiento.flight_number}}</p>
+
+
+                </div>
+                </div>
+                </div>
+                <div class="container row">
+                    <div class="card col" style="width: 18rem;">
+                    <img src="{{lanzamiento.links.patch.small}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{lanzamiento.date_local|date}}</h5>
+                    <h6>Failure Reason(s) :</h6><p class="card-text" *ngFor="let item of lanzamiento.failures"> {{item.reason}}</p>
+                    
+                    </div>
+                </div>
+                    <div class="card col" style="width: 18rem;">
+                        <video  src="{{lanzamiento.links.webcast}}" class="card-img-top" alt="...">Video De Youtube</video>
+                        <div class="card-body">
+                        <h5 class="card-title">More info: <hr>{{lanzamiento.links.wikipedia}}</h5>
+                        <h5 class="card-title"> {{lanzamiento.links.article}}</h5>
+
+                    </div>
+                </div>
+
+            </div>
+
+        <div>
+
+    </div>
 </div>
