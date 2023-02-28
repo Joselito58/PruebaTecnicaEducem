@@ -1,0 +1,22 @@
+1.1 La sentencia JOIN en el leguaje de consultas estructurado funciona para combinar columnas entre 2 o más tablas que se relacionadas por una columna. 
+Los distintitos tipos de JOINs son:
+Inner Join => regresa donde hay un match entre las columnas de las tablas involucradas.
+Left Join => regresa todos los datos de las columnas de la primera tabla junto con las columnas de la segunda tabla aunque no haya un match, si no existe un match el campo queda null
+Right Join => regresa todos los datos de las columnas de la segunda tabla junto con las columnas de la primera tabla aunque no haya un match, si no existe un match el campo queda null
+Full Join => regresa todas las columnas de ambas tablas haya un match o no, donde no exista un match quedara null
+Self Join => esta sentencia nos sirve para relacionar directamente datos dentro de una misma tabla apoyándonos de alias y escogiendo el campo compartido
+
+
+1.2 
+use pruebatecnicaeducem;
+select nombreMiembro,nombreComida from catmiembro inner join catcomidamiembro where catmiembro.miembroId =catcomidamiembro.miembroId
+
+1.3
+use pruebatecnicaeducem;
+select nombreMiembro,nombreComida from catmiembro left join catcomidamiembro on catmiembro.miembroId =catcomidamiembro.miembroId
+
+
+
+
+
+
