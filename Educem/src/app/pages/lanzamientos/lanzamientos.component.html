@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Flight number</th>
+        <th scope="col">Name</th>
+        <th scope="col">Local Date</th>
+        <th scope="col">Last Launch</th>
+        <th scope="col">More</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of LanzamientosRender">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.flight_number}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.date_utc| date}}</td>
+        <td>Restar fecha contra fecha de hoy</td>
+        <td><button type="button" class="btn btn-info" routerLink="{{item.id}}">Info</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
